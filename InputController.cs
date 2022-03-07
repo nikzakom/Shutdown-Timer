@@ -31,14 +31,14 @@ namespace Shutdown_Timer
                 DateTime tmp;
                 tmp = targetDt.AddDays(1);
                 targetDt = tmp;
-                form.log("PC will be shutdown " + targetDt.ToShortDateString() + " at " + targetDt.TimeOfDay.ToString());
+                form.log("PC will be shutdown " + targetDt.ToShortDateString() + " at " + targetDt.ToString("HH:mm"));
                 dtDiff = targetDt.Subtract(currentDt);
 
             }
             else if (currentDt < targetDt)
             {
                 dtDiff = targetDt.Subtract(currentDt);
-                form.log("PC will be shutdown today at: " + targetDt.TimeOfDay.ToString());
+                form.log("PC will be shutdown today at: " + targetDt.ToString("HH:mm"));
             }
 
             time = (int)dtDiff.TotalSeconds;

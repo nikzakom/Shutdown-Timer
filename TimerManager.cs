@@ -17,14 +17,7 @@ namespace Shutdown_Timer
 
         public bool TimerActive()
         {
-            if (timer.Enabled)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return timer.Enabled ? true : false;
         }
 
         public void StopTimer()

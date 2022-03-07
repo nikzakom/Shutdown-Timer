@@ -120,7 +120,9 @@ namespace Shutdown_Timer
         {
             string fullMessage;
 
-            fullMessage = "[" + DateTime.Now + " " + "] " + message + Environment.NewLine;
+            fullMessage =  message + Environment.NewLine;
+            // debug
+            //fullMessage = $"[{DateTime.Now}] {message}{Environment.NewLine}";
 
             logTB.Text += fullMessage;
 
