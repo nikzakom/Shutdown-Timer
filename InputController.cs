@@ -17,14 +17,13 @@ namespace Shutdown_Timer
             DateTime currentDt = DateTime.Now;
             DateTime targetDt = GetTargetDateTime();
             TimeSpan dtDiff = new TimeSpan();
-            int time;
 
             //form.log("current " + currentDt.ToString());
             //form.log("target " + targetDt.ToString());
 
             if (currentDt == targetDt)
             {
-                return time = 0;
+                return 0;
             }
             else if (currentDt > targetDt)
             {
@@ -41,7 +40,7 @@ namespace Shutdown_Timer
                 form.Log("PC will be shutdown today at: " + targetDt.ToString("HH:mm"));
             }
 
-            return time = (int)dtDiff.TotalSeconds;
+            return (int)dtDiff.TotalSeconds;
 
             //form.log("Diff " + dtDiff.ToString());
             //form.log("Seconds " + time.ToString());
