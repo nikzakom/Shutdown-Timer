@@ -116,7 +116,7 @@ namespace Shutdown_Timer
             this.Close();
         }
 
-        public void log(string message)
+        public void Log(string message)
         {
             string fullMessage;
 
@@ -157,7 +157,7 @@ namespace Shutdown_Timer
             if (timerManager.TimerActive())
             {
                 timerManager.StopTimer();
-                log("Timer stopped");
+                Log("Timer stopped");
             }
 
             startBtn.Visible = true;

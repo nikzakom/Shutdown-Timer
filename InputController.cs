@@ -17,36 +17,34 @@ namespace Shutdown_Timer
             DateTime currentDt = DateTime.Now;
             DateTime targetDt = GetTargetDateTime();
             TimeSpan dtDiff = new TimeSpan();
-            int time = 0;
+            int time;
 
             //form.log("current " + currentDt.ToString());
             //form.log("target " + targetDt.ToString());
 
             if (currentDt == targetDt)
             {
-                time = 0;
+                return time = 0;
             }
             else if (currentDt > targetDt)
             {
                 DateTime tmp;
                 tmp = targetDt.AddDays(1);
                 targetDt = tmp;
-                form.log("PC will be shutdown " + targetDt.ToShortDateString() + " at " + targetDt.ToString("HH:mm"));
+                form.Log("PC will be shutdown " + targetDt.ToShortDateString() + " at " + targetDt.ToString("HH:mm"));
                 dtDiff = targetDt.Subtract(currentDt);
 
             }
             else if (currentDt < targetDt)
             {
                 dtDiff = targetDt.Subtract(currentDt);
-                form.log("PC will be shutdown today at: " + targetDt.ToString("HH:mm"));
+                form.Log("PC will be shutdown today at: " + targetDt.ToString("HH:mm"));
             }
 
-            time = (int)dtDiff.TotalSeconds;
+            return time = (int)dtDiff.TotalSeconds;
 
             //form.log("Diff " + dtDiff.ToString());
             //form.log("Seconds " + time.ToString());
-
-            return time;
         }
 
         private DateTime GetTargetDateTime()
@@ -104,7 +102,7 @@ namespace Shutdown_Timer
                         break;
                 }
 
-                form.log("Timer is set to: " + form.timeInput.Text + " "
+                form.Log("Timer is set to: " + form.timeInput.Text + " "
                     + form.customPicker.SelectedItem.ToString());
             }
 
